@@ -425,6 +425,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7008398587944959878, guid: b96518d8e4b00d347b6b05bac20b3985, type: 3}
   m_PrefabInstance: {fileID: 474868831}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &565500830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 565500832}
+  - component: {fileID: 565500831}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &565500831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565500830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2254fe97a7db7c64a9c8d8640f59c32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &565500832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565500830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.1485403, y: -1.4897851, z: -0.21650214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608524074
 GameObject:
   m_ObjectHideFlags: 0
@@ -6438,6 +6482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fde55c1951361d4eab57648c92967a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!1001 &3879629822362850423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6515,6 +6560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5973654429707535765, guid: a78da1c7fc1c9504d99c39d582030e03, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 5972548368537814980, guid: 4115c6005982f3d43810abf3cb072e54, type: 3}
     - target: {fileID: 5973654429707535765, guid: a78da1c7fc1c9504d99c39d582030e03, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 256
