@@ -16,6 +16,8 @@ public class PlayerBehavior : MonoBehaviour
 
     private CapsuleCollider _col;
 
+    private bool doJump = false;
+
     void Start ()
     {
         _rb = GetComponent<Rigidbody>();
@@ -27,17 +29,23 @@ public class PlayerBehavior : MonoBehaviour
         vInput = Input.GetAxis("Vertical") * moveSpeed;
         hInput = Input.GetAxis("Horizontal") * rotateSpeed;
 
+         if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        {
+            doJump = true;
         /*
         this.transform.Translate(Vector3.forward * vInput * Time.deltaTime);
         this.transform.Translate(Vector3.up * hInput * Time.deltaTime);
         */
+        }
+        
     }
     void FixedUpdate()
     {
-        if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
-        {
-            _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-        }
+         if (doJump)
+       {
+        _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+        doJump = false;
+       }
         Vector3 rotation = Vector3.up * hInput;
         Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
         _rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
@@ -50,3 +58,4 @@ public class PlayerBehavior : MonoBehaviour
         return grounded;
     }
 }
+
