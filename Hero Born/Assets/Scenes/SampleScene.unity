@@ -454,6 +454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2254fe97a7db7c64a9c8d8640f59c32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showWinScreen: 0
+  labelText: Collect all 4 items and win your freedom!
+  maxItems: 4
 --- !u!4 &565500832
 Transform:
   m_ObjectHideFlags: 0
