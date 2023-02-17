@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LearningCurve : MonoBehaviour
 {
+    public Transform camTransform;
+    public GameObject directionLight;
+    private Transform lightTransform;
     // public int currentGold = 42;
     // public bool pureOfHeart = true;
     // public bool hasSecretIncantation = false;
@@ -19,18 +22,50 @@ public class LearningCurve : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // DICTIONARY EXAMPLE
-             Dictionary<string, int> itemInventory = new Dictionary<string, int>()
-             {
-                 {"Potion", 5},
-                 {"Antidote", 7},
-                 {"Aspirin", 1}
-             };
-             //ForEach LOOP
-             foreach(KeyValuePair<string, int> kvp in itemInventory)
-             {
-                Debug.LogFormat("Item: {0} - {1}g", kvp.Key, kvp.Value);
-             }
+        camTransform = this.GetComponent<Transform>();
+        Debug.Log(camTransform.localPosition);
+
+        //directionLight = GameObject.Find("Directional Light");
+        lightTransform = directionLight.GetComponent<Transform>();
+        Debug.Log(lightTransform.localPosition);
+
+
+        // //Using Constructors
+        //     Character hero = new Character();
+        //     //If you use Character hero2 = hero - they will be linked
+        //     Character hero2 = new Character();
+        //     hero2.name = "Sokka of the Water Tribe";
+
+        //     hero.PrintStatsInfo();
+        //     hero2.PrintStatsInfo();
+        //     //Wrong way to access reset class, because of the privacy level - hero2.Reset();
+
+        //     Character heroine = new Character("Agatha");
+        //     heroine.PrintStatsInfo();
+
+        //     Weapon huntingBow = new Weapon("Hunting Bow", 105);
+        //     Weapon warBow = huntingBow;
+        //     warBow.name = "War Bow";
+        //     warBow.damage = 155;
+
+        //     Paladin knight = new Paladin("Sir Arthur", huntingBow);
+        //     knight.PrintStatsInfo();
+
+        //     huntingBow.PrintWeaponStats();
+        //     warBow.PrintWeaponStats();
+            
+        // // DICTIONARY EXAMPLE
+        //      Dictionary<string, int> itemInventory = new Dictionary<string, int>()
+        //      {
+        //          {"Potion", 5},
+        //          {"Antidote", 7},
+        //          {"Aspirin", 1}
+        //      };
+        //      //ForEach LOOP
+        //      foreach(KeyValuePair<string, int> kvp in itemInventory)
+        //      {
+        //         Debug.LogFormat("Item: {0} - {1}g", kvp.Key, kvp.Value);
+        //      }
              // Retrieve Element's Value
         //     int numberOfPotions = itemInventory["Potion"];
         //     // Update Element

@@ -860,6 +860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a21a32be5537a4392c7cfca54bca02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camTransform: {fileID: 0}
+  directionLight: {fileID: 705507993}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
