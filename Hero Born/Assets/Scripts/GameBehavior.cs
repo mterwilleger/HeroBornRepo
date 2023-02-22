@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameBehavior : MonoBehaviour
+public class GameBehavior : MonoBehaviour, IManager
 {
+    private string _state;
+    public string State
+    {
+        get { return _state; }
+        set {_state = value; }
+    }
     public bool showWinScreen = false;
     public bool showLossScreen = false;
     //UI Code
@@ -50,10 +56,14 @@ public class GameBehavior : MonoBehaviour
             Debug.LogFormat("Lives: {0}", _playerHP);
         }
     }
-    void RestartLevel()
+    void Start()
     {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1.0f;
+        Initialize();
+    }
+    public void Initialize()
+    {
+        _state = "Manager initialized...";
+        Debug.Log(_state);
     }
     void OnGUI()
     {
@@ -65,18 +75,14 @@ public class GameBehavior : MonoBehaviour
         {
             if (GUI.Button(new Rect(Screen.width/2 - 100, Screen.height/2 - 50, 200, 100), "YOU WON!!"))
             {
-                RestartLevel();
-                SceneManager.LoadScene(0);
-                Time.timeScale = 1.0f;
+                Utilities.RestartLevel(0);
             }
         }
         if(showLossScreen)
         {
             if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 100), "You Lose..."))
             {
-                RestartLevel();
-                SceneManager.LoadScene(0);
-                Time.timeScale = 1.0f;
+                Utilities.RestartLevel();
             }
         }
     }
