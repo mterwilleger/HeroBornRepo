@@ -538,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showWinScreen: 0
+  showLossScreen: 0
   labelText: Collect all 4 items and win your freedom!
   maxItems: 4
 --- !u!4 &565500832
@@ -6918,7 +6919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7619693192035048308, guid: e4ab7083b9d5cf54dbe165ee8c8ea75a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1485403
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 7619693192035048308, guid: e4ab7083b9d5cf54dbe165ee8c8ea75a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6926,7 +6927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7619693192035048308, guid: e4ab7083b9d5cf54dbe165ee8c8ea75a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.7
+      value: -12.5
       objectReference: {fileID: 0}
     - target: {fileID: 7619693192035048308, guid: e4ab7083b9d5cf54dbe165ee8c8ea75a, type: 3}
       propertyPath: m_LocalRotation.w
