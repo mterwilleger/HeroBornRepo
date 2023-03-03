@@ -12,11 +12,13 @@ public class GameBehavior : MonoBehaviour, IManager
         get { return _state; }
         set {_state = value; }
     }
+    
     public bool showWinScreen = false;
     public bool showLossScreen = false;
     //UI Code
     public string labelText = "Collect all 4 items and win your freedom!";
     public int maxItems = 4;
+    
 
     private int _itemsCollected = 0;
     public int Items 
@@ -37,7 +39,6 @@ public class GameBehavior : MonoBehaviour, IManager
             }
         }
     }
-
     private int _playerHP = 3;
     public int HP
     {
@@ -57,15 +58,32 @@ public class GameBehavior : MonoBehaviour, IManager
             Debug.LogFormat("Lives: {0}", _playerHP);
         }
     }
+
+    public delegate void DebugDelegate(string newText);
+    public DebugDelegate debug = Print;
+    public Stack<string> lootStack = new Stack<string>();
+
     void Start()
     {
         Initialize();
+        InventoryList<string> inventoryList = new InventoryList<string>();
+        inventoryList.SetItem("Potion");
+        Debug.Log(inventoryList.item);
     }
     public void Initialize()
     {
         _state = "Manager initialized...";
         _state.FancyDebug();
-        Debug.Log(_state);
+        debug(_state);
+        LogWithDelegate(debug);
+    }
+    public static void Print(string newText)
+    {
+        Debug.Log(newText);
+    }
+    public void LogWithDelegate(DebugDelegate del)
+    {
+        del("Delegating the debug task...");
     }
     void OnGUI()
     {
@@ -88,4 +106,6 @@ public class GameBehavior : MonoBehaviour, IManager
             }
         }
     }
+    
+
 }

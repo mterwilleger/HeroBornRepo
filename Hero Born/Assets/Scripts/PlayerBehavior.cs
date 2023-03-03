@@ -25,6 +25,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private GameBehavior _gameManager;
 
+
     void Start ()
     {
         _rb = GetComponent<Rigidbody>();
